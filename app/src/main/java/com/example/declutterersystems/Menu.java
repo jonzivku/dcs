@@ -56,8 +56,8 @@ public class Menu extends AppCompatActivity {
     }
 
     public void launchChatBot(){
-//        Intent intentBot = new Intent(this, ClutterBot.class);
-//        startActivity(intentBot);
+        Intent intentBot = new Intent(this, ClutterBot.class);
+        startActivity(intentBot);
     }
 
     public void launchResources(){

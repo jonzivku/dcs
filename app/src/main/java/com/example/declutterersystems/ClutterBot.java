@@ -1,6 +1,7 @@
 package com.example.declutterersystems;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,12 +14,18 @@ import io.kommunicate.Kommunicate;
 import io.kommunicate.callbacks.KmCallback;
 
 public class ClutterBot extends AppCompatActivity {
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        Kommunicate.init(getApplicationContext(), "33b7e2d4f7cadc4cbd0ee6e36a094cb73");
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_clutter_bot);
-//
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ArrayList<String> messages = new ArrayList<>();
+        messages.add("Hello World");
+        messages.add("Bye World");
+
+        Kommunicate.init(getApplicationContext(), "33b7e2d4f7cadc4cbd0ee6e36a094cb73");
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_clutter_bot);
+        RecyclerView myRecyclerView = findViewById(R.id.recyclerView);
+        myRecyclerView.setAdapter(new FirebaseRecyclerAdapter(messages));
+        Log.i("Tyler","onCreate");
 //        List<String> botIds = new ArrayList<>();
 //        botIds.add("clutterbot-kwbvv"); // Kommunicate Bot-ID, which holds the DialogFlow(Google) bot.
 //        new KmConversationBuilder(ClutterBot.this) //create and launch a conversation with the bot.
@@ -36,5 +43,5 @@ public class ClutterBot extends AppCompatActivity {
 //                Log.d("Conversation", "Failure : " + error);
 //            }
 //        });
-//    }
+    }
 }
