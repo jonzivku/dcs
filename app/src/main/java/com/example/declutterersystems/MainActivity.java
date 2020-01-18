@@ -3,6 +3,7 @@ package com.example.declutterersystems;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -45,18 +46,23 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         users = userDAO.getUsers();
-        boolean userFound = false;
         for(User user:users){
             if(user.getName().matches(userName)){
                 Toast.makeText(this, user.getName() + " is logged in", Toast.LENGTH_SHORT).show();
                 user.setLoggedIn(true);
-                userFound = true;
-
+                launchActivity();
+                return;
             }
         }
-        if(!userFound){
-            userDAO.insert(new User(userName, true));
-            Toast.makeText(this, userName + " got registered and is now logged in", Toast.LENGTH_SHORT).show();
-        }
+        userDAO.insert(new User(userName, true));
+        Toast.makeText(this, userName + " got registered and is now logged in", Toast.LENGTH_SHORT).show();
+        launchActivity();
     }
+
+    private void launchActivity(){
+        Intent intent = new Intent(this, menu.class);
+        startActivity(intent);
+
+    }
+
 }

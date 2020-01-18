@@ -13,6 +13,7 @@ public class User {
     private String name;
     private Boolean loggedIn;
 
+
     // constructor
     public User (String name, Boolean loggedIn){
         this.name = name;

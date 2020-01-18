@@ -3,4 +3,8 @@
     <string name="greeting">Hello Clean Space!</string>
     <string name="inputName">Input Name</string>
     <string name="login">Login</string>
+    <string name="chatBtn">Chat Button</string>
+    <string name="chat">Chat</string>
+    <string name="timer">Timer</string>
+    <string name="resources">Resources</string>
 </resources>
