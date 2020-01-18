@@ -30,7 +30,7 @@ public class Menu extends AppCompatActivity {
         menuItems.add("Timer");
         menuItems.add("Resources");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.browser_link_context_header,menuItems);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,menuItems);
         menuView.setAdapter(arrayAdapter);
 
         menuView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -61,8 +61,8 @@ public class Menu extends AppCompatActivity {
     }
 
     public void launchResources(){
-//        Intent intentResources = new Intent(this, Resources.class);
-//        startActivity(intentResources);
+        Intent intentResources = new Intent(this, Resources.class);
+        startActivity(intentResources);
     }
 
 

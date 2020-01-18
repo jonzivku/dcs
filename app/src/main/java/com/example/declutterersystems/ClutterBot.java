@@ -1,18 +1,18 @@
-//package com.example.declutterersystems;
-//
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import android.os.Bundle;
-//import android.util.Log;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import io.kommunicate.KmConversationBuilder;
-//import io.kommunicate.Kommunicate;
-//import io.kommunicate.callbacks.KmCallback;
-//
-//public class ClutterBot extends AppCompatActivity {
+package com.example.declutterersystems;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import io.kommunicate.KmConversationBuilder;
+import io.kommunicate.Kommunicate;
+import io.kommunicate.callbacks.KmCallback;
+
+public class ClutterBot extends AppCompatActivity {
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        Kommunicate.init(getApplicationContext(), "33b7e2d4f7cadc4cbd0ee6e36a094cb73");
@@ -37,4 +37,4 @@
 //            }
 //        });
 //    }
-//}
+}
