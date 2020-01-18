@@ -11,6 +11,21 @@ public class User {
     @PrimaryKey(autoGenerate = true)
     private int userId;
     private String name;
+    private Boolean loggedIn;
+
+    // constructor
+    public User (String name, Boolean loggedIn){
+        this.name = name;
+        this.loggedIn = loggedIn;
+    }
+
+    public Boolean getLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(Boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
 
     public int getUserId() {
         return userId;
