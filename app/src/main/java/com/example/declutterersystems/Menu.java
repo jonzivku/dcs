@@ -30,17 +30,22 @@ public class Menu extends AppCompatActivity {
         menuItems.add("Timer");
         menuItems.add("Resources");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,menuItems);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.browser_link_context_header,menuItems);
         menuView.setAdapter(arrayAdapter);
 
         menuView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(Menu.this, "Clicked on Student: " + menuItems.get(i),Toast.LENGTH_SHORT).show();
+                Toast.makeText(Menu.this, "Clicked menu item: " + menuItems.get(i),Toast.LENGTH_SHORT).show();
 
                 if(menuItems.get(i).matches("Timer")){
                     launchTimer();
+                } else if(menuItems.get(i).matches("ChatBot")){
+                    launchChatBot();
+                } else {
+                    launchResources();
                 }
+
             }
         });
     }
@@ -49,5 +54,17 @@ public class Menu extends AppCompatActivity {
         Intent intentTimer = new Intent(this, Timer.class);
         startActivity(intentTimer);
     }
+
+    public void launchChatBot(){
+//        Intent intentBot = new Intent(this, ClutterBot.class);
+//        startActivity(intentBot);
+    }
+
+    public void launchResources(){
+//        Intent intentResources = new Intent(this, Resources.class);
+//        startActivity(intentResources);
+    }
+
+
 
 }
