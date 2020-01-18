@@ -22,6 +22,10 @@ public class ClutterBot extends AppCompatActivity {
 
         Kommunicate.init(getApplicationContext(), "33b7e2d4f7cadc4cbd0ee6e36a094cb73");
         super.onCreate(savedInstanceState);
+
+        getSupportActionBar().setTitle("ChatBot");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_clutter_bot);
         RecyclerView myRecyclerView = findViewById(R.id.recyclerView);
         myRecyclerView.setAdapter(new FirebaseRecyclerAdapter(messages));

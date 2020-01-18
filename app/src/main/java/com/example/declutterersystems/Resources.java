@@ -19,6 +19,11 @@ public class Resources extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources);
+
+        getSupportActionBar().setTitle("Resources");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         resList = new ArrayList<>();
         resList.add("foo");
         resList.add("goo");

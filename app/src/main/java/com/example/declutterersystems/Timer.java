@@ -20,6 +20,10 @@ public class Timer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
+
+        getSupportActionBar().setTitle("Cleaning Clock");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         button = (Button) findViewById(R.id.button);
         textView = (TextView) findViewById(R.id.textView);
 

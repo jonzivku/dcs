@@ -39,6 +39,8 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        getSupportActionBar().setTitle("Menu");
+
         userLoggedInText = findViewById(R.id.userLoggedInId);
 
         userDAO = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.dbName)
