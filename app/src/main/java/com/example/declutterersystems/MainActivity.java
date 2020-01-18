@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void launchActivity(){
-        Intent intent = new Intent(this, menu.class);
+        Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
 
     }

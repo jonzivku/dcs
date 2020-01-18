@@ -7,4 +7,6 @@
     <string name="chat">Chat</string>
     <string name="timer">Timer</string>
     <string name="resources">Resources</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="timerMessage">Input Time in Minutes</string>
 </resources>
