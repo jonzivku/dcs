@@ -8,13 +8,25 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="Menu"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="20dp"
         android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:id="@+id/userLoggedInId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
         android:layout_alignParentTop="true"
         />
 
