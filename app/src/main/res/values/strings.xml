@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DecluttererSystems</string>
+    <string name="greeting">Hello Clean Space!</string>
 </resources>
