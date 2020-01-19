@@ -12,6 +12,10 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        buildConfigField "String", "APP_ID", '"33b7e2d4f7cadc4cbd0ee6e36a094cb73"'
+
+
+
         // added this the rooms data base
         javaCompileOptions {
             annotationProcessorOptions {
@@ -49,4 +53,6 @@ dependencies {
 
     //added this for firebase
     implementation 'com.google.firebase:firebase-analytics:16.0.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
