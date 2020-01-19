@@ -8,7 +8,7 @@ import com.example.declutterersystems.DataBase.AppDatabase;
 @Entity(tableName = AppDatabase.RESOURCE_TABLE)
 public class Resource {
     @PrimaryKey(autoGenerate = true)
-    private int ID;
+    int ID;
 
     private String name;
     private String desc;
@@ -59,9 +59,9 @@ public class Resource {
         return ID;
     }
 
-//    public void setID(int ID) {
-//        this.ID = ID;
-//    }
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
     @Override
     public String toString() {
