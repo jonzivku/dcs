@@ -2,9 +2,14 @@ package com.example.declutterersystems;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.example.declutterersystems.Classes.Resource;
+
+import java.net.URL;
 
 public class WebDisplay extends AppCompatActivity {
 
@@ -12,11 +17,11 @@ public class WebDisplay extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("NAME");
+        String url = intent.getStringExtra("URL");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_display);
-
-        String name = getIntent().getStringExtra("NAME");
-        String url = getIntent().getStringExtra("URL");
 
         // change this to the name of the Url
         getSupportActionBar().setTitle(name);
@@ -31,6 +36,5 @@ public class WebDisplay extends AppCompatActivity {
 
         // this will be the place to change the url
         webview.loadUrl(url);
-
-    }
-}
+    };
+};

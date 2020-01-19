@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextView android:background="@drawable/listview_01"
+    android:textColor="#050505"
+    android:gravity="left"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:textSize="30sp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@android:id/text1"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>

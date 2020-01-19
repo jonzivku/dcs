@@ -19,44 +19,87 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Resources extends AppCompatActivity {
+    //arrays for testing and basic functionality
+    String[] nameArray = {
+            "The Warming Center Program",
+            "Grey Bears",
+            "UCSC E-Waste Services",
+            "Walnut Avenue Family & Women's Center",
+            "Habitat for Humanity ReStore",
+            "Junk King"};
+    String[] infoArray = {
+            "Clothing, Shoes, Blankets, Bags",
+            "E-waste and Household Goods",
+            "E-waste, Consumer Electronics",
+            "Women and Childrens Clothing, Toiletries",
+            "Building Supplies, Furniture, Appliances",
+            "Residential Removal Service"};
 
-    ListView resView;
-    List<Resource> resList;
-    ResourceDAO resourceDAO;
+    Integer[] imageArray = {R.drawable.ic_confused,
+            R.drawable.ic_confused_grey,
+            R.drawable.ic_happy,
+            R.drawable.ic_sad_1,
+            R.drawable.ic_sad_1_grey,
+            R.drawable.ic_confused};
 
-    @Override
+    String[] urlArray = {
+            "https://www.warmingcenterprogram.com/",
+            "https://www.greybears.org/about/contact-us/",
+            "https://www.receiving.ucsc.edu/e-waste-recycling/index.html",
+            "https://www.wafwc.org/wish-lists",
+            "https://www.habitatmontereybay.com/donationcriteria",
+            "https://www.junk-king.com/locations/santacruz/"};
+
+    // unused description array
+    String[] descArray = {
+            "Distributes warm clothing, blankets, and camping materials to the housingless",
+            "Community program dedicated to helping seniors, recycling E-waste. and also reusing and resaling goods",
+            "Surplus Operations is the UCSC Campus Faculty and Staff designated outlet for the disposal of electronic devices, including CRTs, etc.",
+            "Walnut Avenue Family & Women’s Center provides support and services so that women, children, and families have the opportunities and skills to thrive",
+            "Resales building materials, furniture, and appliances",
+            "Service offering removal of general waste"};
+
+    ListView listView;
+    //   List<Resource> viewList;
+   // ResourceDAO resourceDAO;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources);
 
+        ResourceListAdapter arrayAdapter = new ResourceListAdapter(this, nameArray, infoArray, imageArray, urlArray);
+        listView = findViewById(R.id.listviewID);
+        listView.setAdapter(arrayAdapter);
+
         getSupportActionBar().setTitle("Resources");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        resourceDAO = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.dbNameResource)
-                .allowMainThreadQueries()
-                .fallbackToDestructiveMigration()
-                .build()
-                .getResourceDAO();
 
-        resList = resourceDAO.getResources();
-        resList.add(new Resource("The Warming Center Program",
-                "Distributes warm clothing, blankets, and camping materials to the housingless",
-                "Clothing, Shoes, Blankets, Bags",
-                "https://www.warmingcenterprogram.com/"
-                ));
 
-        resView = findViewById(R.id.resources_id);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, resList);
-        resView.setAdapter(arrayAdapter);
-
-        resView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Resources.this, "Clicked menu item: " + resList.get(position),Toast.LENGTH_SHORT).show();
-                Intent webIntent = new Intent(Resources.this, WebDisplay.class);
-                webIntent.putExtra("NAME", resList.get(position).getName());
-                webIntent.putExtra("URL", resList.get(position).getUrl());
-                startActivity(webIntent);
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Intent intent = new Intent(Resources.this, WebDisplay.class);
+
+                intent.putExtra("NAME", nameArray[position] );
+                intent.putExtra("URL", urlArray[position] );
+                startActivity(intent);
             }
         });
     }
+
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+
+//
+//        resView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(Resources.this, "Clicked menu item: " + resList.get(position),Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//    }
 }

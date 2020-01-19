@@ -3,6 +3,8 @@
     package="com.example.declutterersystems">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<!--        android:usesCleartextTraffic="true"-->
+
 
     <application
         android:allowBackup="true"
