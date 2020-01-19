@@ -37,18 +37,26 @@ public class Resources extends AppCompatActivity {
             R.drawable.ic_sad_1_grey,
             R.drawable.ic_confused};
 
+    String[] urlArray = {
+            "8 tentacled monster",
+            "Delicious in rolls",
+            "Great for jumpers",
+            "Nice in a stew",
+            "Great for shoes",
+            "Scary."
+    };
 
     ListView listView;
     //   List<Resource> viewList;
    // ResourceDAO resourceDAO;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources);
 
-        ResourceListAdapter whatever = new ResourceListAdapter(this, nameArray, infoArray, imageArray);
-        listView = (ListView) findViewById(R.id.listviewID);
+        ResourceListAdapter whatever = new ResourceListAdapter(this, nameArray, infoArray, imageArray, urlArray);
+        listView = findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
 
     }
