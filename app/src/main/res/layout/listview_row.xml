@@ -9,14 +9,16 @@
     <ImageView
         android:id="@+id/imageView1ID"
         android:layout_width="wrap_content"
-        android:layout_height="40sp"
+        android:layout_height="80dp"
         android:layout_weight="1"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:paddingLeft="15dp"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="10"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
@@ -25,15 +27,21 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="TextView"
-            android:textSize="20sp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
+            android:textSize="17sp"
+            android:paddingLeft="15dp"
+            android:paddingTop="7dp"
+            android:textStyle="bold"
             />
 
         <TextView
             android:id="@+id/takesTextViewID"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textSize="15sp"
+            android:paddingLeft="15dp"
+            android:paddingTop="7dp"
+
+            />
     </LinearLayout>
 </LinearLayout>
