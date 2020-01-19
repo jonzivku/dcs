@@ -4,37 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Menu">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Menu"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentTop="true"
-        />
 
     <TextView
         android:id="@+id/userLoggedInId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textSize="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_alignParentTop="true"
-        />
+        android:textSize="20dp" />
 
     <ListView
-
         android:id="@+id/menuId"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginBottom="50dp"/>
 </RelativeLayout>
