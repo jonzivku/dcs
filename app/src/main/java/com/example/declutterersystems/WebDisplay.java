@@ -36,6 +36,5 @@ public class WebDisplay extends AppCompatActivity {
 
         // this will be the place to change the url
         webview.loadUrl(url);
-
-    }
-}
+    };
+};
