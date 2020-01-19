@@ -74,6 +74,9 @@ public class Menu extends AppCompatActivity {
                     launchResources();
                 } else if(menuItems.get(i).matches("Log out")){
                     logOutUser();
+                } else {
+                    Intent intent = new Intent(Menu.this, WebDisplay.class);
+                    startActivity(intent);
                 }
 
             }
