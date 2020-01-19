@@ -5,41 +5,47 @@ package com.example.declutterersystems;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.os.Handler;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.AppCompatButton;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.applozic.mobicomkit.ApplozicClient;
 import com.applozic.mobicomkit.api.account.register.RegistrationResponse;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import io.kommunicate.KmConversationHelper;
 import io.kommunicate.KmException;
-//import io.kommunicate.app.BuildConfig;
+import io.kommunicate.Kommunicate;
+import io.kommunicate.callbacks.KMLoginHandler;
 import io.kommunicate.callbacks.KmCallback;
 import io.kommunicate.callbacks.KmPushNotificationHandler;
 import io.kommunicate.users.KMUser;
-import io.kommunicate.Kommunicate;
+
+//import io.kommunicate.BuildConfig;
+//import io.kommunicate.R;
+
+//import io.kommunicate.appBuildConfig;
 //import io.kommunicate.app.R;
-import io.kommunicate.callbacks.KMLoginHandler;
 
 public class ClutterBot extends AppCompatActivity {
 
 
     EditText mUserId, mPassword;
-    AppCompatButton loginButton, visitorButton;
+    Button loginButton, visitorButton;
     LinearLayout layout;
     boolean exit = false;
     public static final String APP_ID = BuildConfig.APP_ID;
@@ -48,19 +54,23 @@ public class ClutterBot extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_clutter_bot);
 
         Kommunicate.init(this, APP_ID);
 
         layout = (LinearLayout) findViewById(R.id.footerSnack);
         mUserId = (EditText) findViewById(R.id.userId_editText);
         mPassword = (EditText) findViewById(R.id.password_editText);
-        loginButton = (AppCompatButton) findViewById(R.id.btn_signup);
+        loginButton = findViewById(R.id.btn_signup2);
+        Log.e("ClutterBot",(loginButton != null) + " " + loginButton );
         visitorButton = findViewById(R.id.btn_login_as_visitor);
 
         TextView txtViewPrivacyPolicy = (TextView) findViewById(R.id.txtPrivacyPolicy);
-        txtViewPrivacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());
+        try{
+            txtViewPrivacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());
+        }catch(NullPointerException ignored){
 
+        }
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +119,7 @@ public class ClutterBot extends AppCompatActivity {
             }
         });
     }
+
 
     public String getInvalidAppIdError(RegistrationResponse registrationResponse) {
         if (registrationResponse != null) {
