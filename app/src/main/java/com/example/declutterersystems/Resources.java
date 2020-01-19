@@ -23,14 +23,14 @@ public class Resources extends AppCompatActivity {
     String[] nameArray = {
             "The Warming Center Program",
             "Grey Bears",
-            "Resource Recovery Facility",
+            "UCSC E-Waste Services",
             "Walnut Avenue Family & Women's Center",
             "Habitat for Humanity ReStore",
             "Junk King"};
     String[] infoArray = {
             "Clothing, Shoes, Blankets, Bags",
             "E-waste and Household Goods",
-            "E-waste and hazardous items",
+            "E-waste, Consumer Electronics",
             "Women and Childrens Clothing, Toiletries",
             "Building Supplies, Furniture, Appliances",
             "Residential Removal Service"};
@@ -45,8 +45,8 @@ public class Resources extends AppCompatActivity {
     String[] urlArray = {
             "https://www.warmingcenterprogram.com/",
             "https://www.greybears.org/about/contact-us/",
-            "http://www.cityofsantacruz.com/government/city-departments/public-works/resource-recovery-garbage-recycling-sweeping/recycling-and-waste-reduction/electronic-waste-e-waste",
-            "http://www.wafwc.org/wish-lists",
+            "https://www.receiving.ucsc.edu/e-waste-recycling/index.html",
+            "https://www.wafwc.org/wish-lists",
             "https://www.habitatmontereybay.com/donationcriteria",
             "https://www.junk-king.com/locations/santacruz/"};
 
@@ -54,7 +54,7 @@ public class Resources extends AppCompatActivity {
     String[] descArray = {
             "Distributes warm clothing, blankets, and camping materials to the housingless",
             "Community program dedicated to helping seniors, recycling E-waste. and also reusing and resaling goods",
-            "Municipal hazardous waste disposal",
+            "Surplus Operations is the UCSC Campus Faculty and Staff designated outlet for the disposal of electronic devices, including CRTs, etc.",
             "Walnut Avenue Family & Women’s Center provides support and services so that women, children, and families have the opportunities and skills to thrive",
             "Resales building materials, furniture, and appliances",
             "Service offering removal of general waste"};
