@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
     UserDAO userDAO;
     List<User> users;
 
+    protected void onResume(){
+        super.onResume();
+        userInput.setText("");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Login");
 
         userInput = findViewById(R.id.nameInput);
+        userInput.setText("");
 
         userDAO = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.dbName)
                 .allowMainThreadQueries()
@@ -55,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         users = userDAO.getUsers();
         for(User user:users){
             if(user.getName().matches(userName)){
-                Toast.makeText(this, user.getName() + " is logged in", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, user.getName() + " is logged in", Toast.LENGTH_SHORT).show();
                 user.setLoggedIn(true);
                 userDAO.update(user);
                 launchActivity();
@@ -63,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         userDAO.insert(new User(userName, true));
-        Toast.makeText(this, userName + " got registered and is now logged in", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, userName + " got registered and is now logged in", Toast.LENGTH_SHORT).show();
         launchActivity();
     }
 
