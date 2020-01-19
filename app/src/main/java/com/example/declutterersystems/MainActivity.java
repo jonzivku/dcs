@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("Login");
 
         userInput = findViewById(R.id.nameInput);
 
@@ -35,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
                 .build()
                 .getUserDAO();
 
+        users = userDAO.getUsers();
+        for(User user: users){
+            if(user.getLoggedIn()) {
+                launchActivity();
+            }
+        }
 
     }
 
@@ -50,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             if(user.getName().matches(userName)){
                 Toast.makeText(this, user.getName() + " is logged in", Toast.LENGTH_SHORT).show();
                 user.setLoggedIn(true);
+                userDAO.update(user);
                 launchActivity();
                 return;
             }

@@ -16,34 +16,48 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="158dp"
+        android:layout_marginBottom="175dp"
         android:text="@string/start_timer"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/minInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_marginLeft="120dp"
+        android:layout_marginBottom="63dp"
+        android:hint="00"
+        android:inputType="number"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="60sp" />
+
+    <EditText
+        android:id="@+id/secInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/minInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="63dp"
+        android:hint="00"
+        android:inputType="number"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="60sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/minInput"
+        android:layout_marginLeft="72dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
-        android:id="@+id/textView"
+        android:layout_marginBottom="78dp"
+        android:hint=":"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="40sp" />
+        android:textSize="60sp" />
 
-    <EditText
-        android:id="@+id/timerInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_above="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
-
-
-        android:ems="10"
-        android:hint="@string/timerMessage"
-        android:inputType="number"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
