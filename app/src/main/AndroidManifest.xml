@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WebDisplay" android:parentActivityName=".Resources"></activity>
+        <activity android:name=".SplashScreen"></activity>
+        <activity
+            android:name=".WebDisplay"
+            android:parentActivityName=".Resources" />
         <activity
             android:name=".Timer"
             android:parentActivityName=".Menu" />

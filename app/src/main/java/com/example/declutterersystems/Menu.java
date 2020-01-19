@@ -58,13 +58,13 @@ public class Menu extends AppCompatActivity {
         menuItems.add("");
         menuItems.add("Log out");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,menuItems);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.listview_item,menuItems);
         menuView.setAdapter(arrayAdapter);
 
         menuView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(Menu.this, "Clicked menu item: " + menuItems.get(i),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Menu.this, "Clicked menu item: " + menuItems.get(i),Toast.LENGTH_SHORT).show();
 
                 if(menuItems.get(i).matches("Timer")){
                     launchTimer();
@@ -74,9 +74,6 @@ public class Menu extends AppCompatActivity {
                     launchResources();
                 } else if(menuItems.get(i).matches("Log out")){
                     logOutUser();
-                } else {
-                    Intent intent = new Intent(Menu.this, WebDisplay.class);
-                    startActivity(intent);
                 }
 
             }
