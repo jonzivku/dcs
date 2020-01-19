@@ -3,6 +3,7 @@ package com.example.declutterersystems;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,13 +37,13 @@ public class Resources extends AppCompatActivity {
                 .build()
                 .getResourceDAO();
 
-
         resList = resourceDAO.getResources();
         resList.add(new Resource("The Warming Center Program",
                 "Distributes warm clothing, blankets, and camping materials to the housingless",
                 "Clothing, Shoes, Blankets, Bags",
                 "https://www.warmingcenterprogram.com/"
                 ));
+
         resView = findViewById(R.id.resources_id);
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, resList);
         resView.setAdapter(arrayAdapter);
@@ -51,7 +52,10 @@ public class Resources extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(Resources.this, "Clicked menu item: " + resList.get(position),Toast.LENGTH_SHORT).show();
-
+                Intent webIntent = new Intent(Resources.this, WebDisplay.class);
+                webIntent.putExtra("NAME", resList.get(position).getName());
+                webIntent.putExtra("URL", resList.get(position).getUrl());
+                startActivity(webIntent);
             }
         });
     }

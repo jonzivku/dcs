@@ -65,11 +65,6 @@ public class Resource {
 
     @Override
     public String toString() {
-        return "Resource{" +
-                "name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
-                ", accepts='" + accepts + '\'' +
-                ", url='" + url + '\'' +
-                '}';
+        return name + '\n' + desc + '\n';
     }
 }

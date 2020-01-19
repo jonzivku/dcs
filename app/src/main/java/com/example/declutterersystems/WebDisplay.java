@@ -15,8 +15,11 @@ public class WebDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_display);
 
+        String name = getIntent().getStringExtra("NAME");
+        String url = getIntent().getStringExtra("URL");
+
         // change this to the name of the Url
-        getSupportActionBar().setTitle("Web");
+        getSupportActionBar().setTitle(name);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -27,7 +30,7 @@ public class WebDisplay extends AppCompatActivity {
         webview.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
 
         // this will be the place to change the url
-        webview.loadUrl("https://www.google.com");
+        webview.loadUrl(url);
 
     }
 }
